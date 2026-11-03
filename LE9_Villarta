@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char name[100], course[100];
+    int age, n, i;
+    
+    printf("Writing Student Database:\n");
+    printf("How many students do you want to record? ");
+    scanf("%d", &n);
+    getchar();
+   
+    printf("\n--- SAVED RECORDS ---\n");
+    for(i = 1; i <= n; i++) {
+        printf("\nStudent %d\n", i);
+        printf("Enter Name: ");
+        fgets(name, 100, stdin);
+        name[strlen(name)-1] = '\0';
+        
+        printf("Enter Age: ");
+        scanf("%d", &age);
+        getchar();
+        
+        printf("Enter Course: ");
+        fgets(course, 100, stdin);
+        course[strlen(course)-1] = '\0';
+        
+        printf("Student %d\n", i);
+        printf("Name: %s\n", name);
+        printf("Age: %d\n", age);
+        printf("Course: %s\n", course);
+    }
+    
+    printf("\n✅ Records entered successfully.\n");
+    printf("⚠️ Note: File saving skipped — platform permission restricted.\n");
+    return 0;
+}
